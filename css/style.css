@@ -1261,3 +1261,68 @@ body{
     border-left-color:#ff4d4d;
 
 }
+/* ==========================================
+        PREMIUM CURSOR
+========================================== */
+
+.cursor{
+
+    width:18px;
+    height:18px;
+
+    border:2px solid #4f9cff;
+    border-radius:50%;
+
+    position:fixed;
+
+    left:0;
+    top:0;
+
+    pointer-events:none;
+
+    transform:translate(-50%,-50%);
+
+    z-index:999999;
+
+    transition:transform .08s linear;
+
+}
+
+.cursor-blur{
+
+    width:350px;
+    height:350px;
+
+    background:rgba(79,156,255,.18);
+
+    border-radius:50%;
+
+    position:fixed;
+
+    left:0;
+    top:0;
+
+    filter:blur(120px);
+
+    transform:translate(-50%,-50%);
+
+    pointer-events:none;
+
+    z-index:-1;
+
+    transition:all .18s linear;
+
+}
+
+/* Hide on Mobile */
+
+@media(max-width:768px){
+
+    .cursor,
+    .cursor-blur{
+
+        display:none;
+
+    }
+
+}
