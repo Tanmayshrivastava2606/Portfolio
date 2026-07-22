@@ -3,7 +3,7 @@
 }
 
 html, body{
-    width:100%;
+    max-width:100%;
     overflow-x:hidden;
 }
 
@@ -1042,13 +1042,17 @@ body{
     }
 
     .hero{
-        min-height:100vh;
-        padding:20px;
-        text-align:center;
-    }
+    min-height:calc(100vh - 80px);
+    padding:20px;
+    text-align:center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
 
-    .hero-content{
-        width:100%;
+ .hero-content{
+    width:100%;
+    max-width:100%;
 }
     
     .intro{
@@ -1126,6 +1130,11 @@ body{
         bottom:20px;
         font-size:20px;
     }
+    .about-text,
+    .contact-text{
+    width:100%;
+    overflow-wrap:break-word;
+}
 
 }
 /* ==========================================
