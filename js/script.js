@@ -1,12 +1,3 @@
-const glow = document.querySelector(".cursor-glow");
-
-document.addEventListener("mousemove", (e) => {
-
-    glow.style.left = e.clientX + "px";
-
-    glow.style.top = e.clientY + "px";
-
-});
 const roles = [
     "Java Developer",
     "AI & Data Science Student",
@@ -257,18 +248,80 @@ function showToast(message,type){
 
 }
 /* ==========================================
-        PREMIUM CURSOR
+        CURSOR 2.0
 ========================================== */
 
 const cursor = document.querySelector(".cursor");
 const blur = document.querySelector(".cursor-blur");
 
-document.addEventListener("mousemove",(e)=>{
+let mouseX = 0;
+let mouseY = 0;
 
-    cursor.style.left = e.clientX + "px";
-    cursor.style.top = e.clientY + "px";
+let cursorX = 0;
+let cursorY = 0;
 
-    blur.style.left = e.clientX + "px";
-    blur.style.top = e.clientY + "px";
+let blurX = 0;
+let blurY = 0;
+
+document.addEventListener("mousemove", (e) => {
+
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+
+});
+
+function animateCursor(){
+
+    // Cursor follows fast
+    cursorX += (mouseX - cursorX) * 0.35;
+    cursorY += (mouseY - cursorY) * 0.35;
+
+    cursor.style.left = cursorX + "px";
+    cursor.style.top = cursorY + "px";
+
+    // Blur follows slower
+    blurX += (mouseX - blurX) * 0.08;
+    blurY += (mouseY - blurY) * 0.08;
+
+    blur.style.left = blurX + "px";
+    blur.style.top = blurY + "px";
+
+    requestAnimationFrame(animateCursor);
+
+}
+
+animateCursor();
+
+const hoverItems = document.querySelectorAll(
+
+"a,button,.btn,.project-card,.social-links a"
+
+);
+
+hoverItems.forEach(item=>{
+
+    item.addEventListener("mouseenter",()=>{
+
+        cursor.classList.add("hover");
+
+    });
+
+    item.addEventListener("mouseleave",()=>{
+
+        cursor.classList.remove("hover");
+
+    });
+
+});
+
+document.addEventListener("mousedown",()=>{
+
+    cursor.style.transform="translate(-50%,-50%) scale(.75)";
+
+});
+
+document.addEventListener("mouseup",()=>{
+
+    cursor.style.transform="translate(-50%,-50%) scale(1)";
 
 });
