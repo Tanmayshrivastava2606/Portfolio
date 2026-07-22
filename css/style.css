@@ -984,7 +984,7 @@ body{
 @media (max-width:768px){
 
     body{
-        padding:15px;
+        padding:0;
         overflow-x:hidden;
     }
 
