@@ -254,6 +254,9 @@ function showToast(message,type){
 const cursor = document.querySelector(".cursor");
 const blur = document.querySelector(".cursor-blur");
 
+console.log(cursor);
+console.log(blur);
+
 let mouseX = 0;
 let mouseY = 0;
 

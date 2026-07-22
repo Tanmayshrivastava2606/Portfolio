@@ -28,6 +28,7 @@ body{
     margin:0;
     padding:40px;
 
+    cursor:none;
 }
 .hero{
 
@@ -1298,7 +1299,7 @@ border .3s ease;
     width:350px;
     height:350px;
 
-    background:rgba(79,156,255,.18);
+   background:rgba(79,156,255,.18);
 
     border-radius:50%;
 
