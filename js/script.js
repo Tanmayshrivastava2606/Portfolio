@@ -275,16 +275,16 @@ document.addEventListener("mousemove", (e) => {
 
 function animateCursor(){
 
-    // Cursor follows fast
-    cursorX += (mouseX - cursorX) * 0.35;
-    cursorY += (mouseY - cursorY) * 0.35;
+   // Cursor - much faster
+cursorX += (mouseX - cursorX) * 0.55;
+cursorY += (mouseY - cursorY) * 0.55;
 
     cursor.style.left = cursorX + "px";
     cursor.style.top = cursorY + "px";
 
-    // Blur follows slower
-    blurX += (mouseX - blurX) * 0.08;
-    blurY += (mouseY - blurY) * 0.08;
+    // Blur - much smoother and slower
+blurX += (mouseX - blurX) * 0.2;
+blurY += (mouseY - blurY) * 0.2;
 
     blur.style.left = blurX + "px";
     blur.style.top = blurY + "px";
@@ -328,3 +328,29 @@ document.addEventListener("mouseup",()=>{
     cursor.style.transform="translate(-50%,-50%) scale(1)";
 
 });
+/* ==========================================
+        FLOATING PARTICLES
+========================================== */
+
+const particles = document.getElementById("particles");
+
+for(let i=0;i<35;i++){
+
+    const p=document.createElement("span");
+
+    p.classList.add("particle");
+
+    p.style.left=Math.random()*100+"%";
+
+    p.style.animationDuration=
+        10+Math.random()*15+"s";
+
+    p.style.animationDelay=
+        Math.random()*10+"s";
+
+    p.style.opacity=
+        .1+Math.random()*.4;
+
+    particles.appendChild(p);
+
+}

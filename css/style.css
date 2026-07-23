@@ -1,3 +1,56 @@
+/* ==========================
+      FLOATING PARTICLES
+========================== */
+
+#particles{
+
+    position:fixed;
+
+    inset:0;
+
+    overflow:hidden;
+
+    pointer-events:none;
+
+    z-index:-2;
+
+}
+
+.particle{
+
+    position:absolute;
+
+    width:4px;
+
+    height:4px;
+
+    border-radius:50%;
+
+    background:#4f9cff;
+
+    opacity:.25;
+
+    animation:floatParticle linear infinite;
+
+}
+
+@keyframes floatParticle{
+
+    from{
+
+        transform:
+translateY(100vh);
+
+    }
+
+    to{
+
+        transform:
+translateY(-10vh);
+
+    }
+
+}
 *{
     box-sizing:border-box;
 }
@@ -1316,7 +1369,7 @@ border .3s ease;
 
     z-index:-1;
 
-    transition:all .18s linear;
+    transition: all .18s linear;
 
 }
 
