@@ -51,6 +51,35 @@ translateY(-10vh);
     }
 
 }
+/* ==========================
+      MOUSE SPOTLIGHT
+========================== */
+
+.spotlight{
+
+    position:fixed;
+
+    width:450px;
+
+    height:450px;
+
+    border-radius:50%;
+
+    background:radial-gradient(circle,
+        rgba(79,156,255,.14),
+        transparent 70%);
+
+    pointer-events:none;
+
+    transform:translate(-50%,-50%);
+
+    z-index:-1;
+
+    filter:blur(60px);
+
+    transition:transform .12s linear;
+
+}
 *{
     box-sizing:border-box;
 }
